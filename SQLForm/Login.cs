@@ -22,7 +22,7 @@ namespace SQLForm
         {
             this.administratorDemo = new AdministratorDemo();
             this.Hide();
-            Form2 form = new Form2(this.administratorDemo);
+            CoManager form = new CoManager(this.administratorDemo);
             form.Show();
         }
     }
