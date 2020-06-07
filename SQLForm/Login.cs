@@ -21,7 +21,7 @@ namespace SQLForm
         private void button1_Click(object sender, EventArgs e)
         {
             this.administratorDemo = new AdministratorDemo();
-            this.Hide();
+            Hide();
             CoManager form = new CoManager(this.administratorDemo);
             form.Show();
         }
