@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4931D75-6DE9-427D-9DB5-22E681E96C9A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SQLForm</RootNamespace>
+    <AssemblyName>SQLForm</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministratorData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CoManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoManager.designer.cs">
+      <DependentUpon>CoManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWarehouse.Designer.cs">
+      <DependentUpon>DeleteWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWarehouseData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formbaosunbiaochaxun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formbaosunbiaochaxun.designer.cs">
+      <DependentUpon>Formbaosunbiaochaxun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formcangkutianjia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formcangkutianjia.designer.cs">
+      <DependentUpon>Formcangkutianjia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formchanpinbaosun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formchanpinbaosun.designer.cs">
+      <DependentUpon>Formchanpinbaosun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formchanpincaozuo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formchanpincaozuo.designer.cs">
+      <DependentUpon>Formchanpincaozuo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formchurukucaozuo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formchurukucaozuo.designer.cs">
+      <DependentUpon>Formchurukucaozuo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formchurukuchaxun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formchurukuchaxun.designer.cs">
+      <DependentUpon>Formchurukuchaxun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HManager.designer.cs">
+      <DependentUpon>HManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProInformation.designer.cs">
+      <DependentUpon>ProInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelProInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelProInformation.designer.cs">
+      <DependentUpon>SelProInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopAdministrator.designer.cs">
+      <DependentUpon>TopAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtoreManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtoreManagement.designer.cs">
+      <DependentUpon>AtoreManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpWaHouseInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpWaHouseInfor.designer.cs">
+      <DependentUpon>UpWaHouseInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseQueries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseQueries.designer.cs">
+      <DependentUpon>WarehouseQueries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPersonalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPersonalInformation.Designer.cs">
+      <DependentUpon>ModifyPersonalInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administrator.resx">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoManager.resx">
+      <DependentUpon>CoManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWarehouse.resx">
+      <DependentUpon>DeleteWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formbaosunbiaochaxun.resx">
+      <DependentUpon>Formbaosunbiaochaxun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formcangkutianjia.resx">
+      <DependentUpon>Formcangkutianjia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formchanpinbaosun.resx">
+      <DependentUpon>Formchanpinbaosun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formchanpincaozuo.resx">
+      <DependentUpon>Formchanpincaozuo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formchurukucaozuo.resx">
+      <DependentUpon>Formchurukucaozuo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formchurukuchaxun.resx">
+      <DependentUpon>Formchurukuchaxun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HManager.resx">
+      <DependentUpon>HManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProInformation.resx">
+      <DependentUpon>ProInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelProInformation.resx">
+      <DependentUpon>SelProInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopAdministrator.resx">
+      <DependentUpon>TopAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtoreManagement.resx">
+      <DependentUpon>AtoreManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpWaHouseInfor.resx">
+      <DependentUpon>UpWaHouseInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseQueries.resx">
+      <DependentUpon>WarehouseQueries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPersonalInformation.resx">
+      <DependentUpon>ModifyPersonalInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="AdministratorData.xsc">
+      <DependentUpon>AdministratorData.xsd</DependentUpon>
+    </None>
+    <None Include="AdministratorData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministratorData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministratorData.xss">
+      <DependentUpon>AdministratorData.xsd</DependentUpon>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="DeleteWarehouseData.xsc">
+      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
+    </None>
+    <None Include="DeleteWarehouseData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeleteWarehouseData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DeleteWarehouseData.xss">
+      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
