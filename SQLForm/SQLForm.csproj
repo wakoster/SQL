@@ -67,6 +67,7 @@
     <Compile Include="CoManager.designer.cs">
       <DependentUpon>CoManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="DeleteWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
