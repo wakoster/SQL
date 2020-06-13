@@ -37,5 +37,10 @@ namespace SQLForm
             仓库管理 form3 = new 仓库管理(this.administratorDemo);
             form3.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

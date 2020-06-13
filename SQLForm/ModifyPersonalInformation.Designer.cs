@@ -59,6 +59,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -81,7 +82,6 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 50;
@@ -98,13 +98,11 @@
             // 
             this.Aname.HeaderText = "Aname";
             this.Aname.Name = "Aname";
-            this.Aname.ReadOnly = true;
             // 
             // Akey
             // 
             this.Akey.HeaderText = "Akey";
             this.Akey.Name = "Akey";
-            this.Akey.ReadOnly = true;
             // 
             // ModifyPersonalInformation
             // 

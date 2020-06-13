@@ -30,9 +30,12 @@ namespace SQLForm
         public string Aname;
         public int Jno;
 
-        public AdministratorDemo()
+        public AdministratorDemo(string Ano, string Akey, string Aname,int Jno)
         {
-            Jno = 3;
+            this.Ano = Ano;
+            this.Akey = Akey;
+            this.Aname = Aname;
+            this.Jno = Jno;
         }
     }
 }
