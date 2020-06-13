@@ -74,11 +74,6 @@
     <Compile Include="DeleteWarehouse.Designer.cs">
       <DependentUpon>DeleteWarehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteWarehouseData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Formbaosunbiaochaxun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,17 +242,6 @@
       <DependentUpon>AdministratorData.xsd</DependentUpon>
     </None>
     <None Include="app.manifest" />
-    <None Include="DeleteWarehouseData.xsc">
-      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
-    </None>
-    <None Include="DeleteWarehouseData.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DeleteWarehouseData.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DeleteWarehouseData.xss">
-      <DependentUpon>DeleteWarehouseData.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

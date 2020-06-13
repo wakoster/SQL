@@ -34,17 +34,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.wAREHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deleteWarehouseData = new SQLForm.DeleteWarehouseData();
-            this.wAREHTableAdapter = new SQLForm.DeleteWarehouseDataTableAdapters.WAREHTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.wnoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wsizeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wnowDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wsize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wnow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.wAREHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteWarehouseData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,16 +60,6 @@
             // wAREHBindingSource
             // 
             this.wAREHBindingSource.DataMember = "WAREH";
-            this.wAREHBindingSource.DataSource = this.deleteWarehouseData;
-            // 
-            // deleteWarehouseData
-            // 
-            this.deleteWarehouseData.DataSetName = "DeleteWarehouseData";
-            this.deleteWarehouseData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wAREHTableAdapter
-            // 
-            this.wAREHTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -97,6 +84,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("宋体", 15F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(299, 34);
@@ -108,7 +96,6 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -120,10 +107,9 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.wnoDataGridViewTextBoxColumn1,
-            this.wsizeDataGridViewTextBoxColumn1,
-            this.wnowDataGridViewTextBoxColumn1});
-            this.dataGridView1.DataSource = this.wAREHBindingSource;
+            this.Wno,
+            this.Wsize,
+            this.Wnow});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 15F);
@@ -141,26 +127,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 295);
             this.dataGridView1.TabIndex = 6;
             // 
-            // wnoDataGridViewTextBoxColumn1
+            // Wno
             // 
-            this.wnoDataGridViewTextBoxColumn1.DataPropertyName = "Wno";
-            this.wnoDataGridViewTextBoxColumn1.HeaderText = "Wno";
-            this.wnoDataGridViewTextBoxColumn1.Name = "wnoDataGridViewTextBoxColumn1";
-            this.wnoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.Wno.HeaderText = "Wno";
+            this.Wno.Name = "Wno";
+            this.Wno.ReadOnly = true;
             // 
-            // wsizeDataGridViewTextBoxColumn1
+            // Wsize
             // 
-            this.wsizeDataGridViewTextBoxColumn1.DataPropertyName = "Wsize";
-            this.wsizeDataGridViewTextBoxColumn1.HeaderText = "Wsize";
-            this.wsizeDataGridViewTextBoxColumn1.Name = "wsizeDataGridViewTextBoxColumn1";
-            this.wsizeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.Wsize.HeaderText = "Wsize";
+            this.Wsize.Name = "Wsize";
+            this.Wsize.ReadOnly = true;
             // 
-            // wnowDataGridViewTextBoxColumn1
+            // Wnow
             // 
-            this.wnowDataGridViewTextBoxColumn1.DataPropertyName = "Wnow";
-            this.wnowDataGridViewTextBoxColumn1.HeaderText = "Wnow";
-            this.wnowDataGridViewTextBoxColumn1.Name = "wnowDataGridViewTextBoxColumn1";
-            this.wnowDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.Wnow.HeaderText = "Wnow";
+            this.Wnow.Name = "Wnow";
+            this.Wnow.ReadOnly = true;
             // 
             // DeleteWarehouse
             // 
@@ -178,7 +161,6 @@
             this.Text = "删除仓库";
             this.Load += new System.EventHandler(this.DeleteWarehouse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.wAREHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteWarehouseData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,15 +170,13 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private DeleteWarehouseData deleteWarehouseData;
         private System.Windows.Forms.BindingSource wAREHBindingSource;
-        private DeleteWarehouseDataTableAdapters.WAREHTableAdapter wAREHTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wnoDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wsizeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wnowDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wsize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wnow;
     }
 }

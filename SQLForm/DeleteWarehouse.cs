@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,13 +18,11 @@ namespace SQLForm
         {
             this.administratorDemo = administratorDemo;
             InitializeComponent();
+            UpdateInformation();
         }
 
         private void DeleteWarehouse_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“deleteWarehouseData.WAREH”中。您可以根据需要移动或删除它。
-            this.wAREHTableAdapter.Fill(this.deleteWarehouseData.WAREH);
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,7 +39,48 @@ namespace SQLForm
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                DialogResult result = MessageBox.Show("是否确认删除仓库号为" + comboBox1.Text + "的仓库", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    Database.conn.Open();
+                    string sql = "DELETE FROM WAREH WHERE Wno = '" + comboBox1.Text + "'";
+                    SqlCommand cmd = new SqlCommand(sql, Database.conn);
+                    cmd.ExecuteReader();
+                    Database.conn.Close();
+                    MessageBox.Show("删除成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    UpdateInformation();
+                }
+            }
+        }
 
+        /// <summary>
+        /// 更新表格界面信息
+        /// </summary>
+        private void UpdateInformation()
+        {
+            comboBox1.Items.Clear();
+            dataGridView1.Rows.Clear();
+            Database.conn.Open();
+            string sql = "SELECT * FROM WAREH";
+            SqlCommand cmd = new SqlCommand(sql, Database.conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            int k = 0;
+            while (reader.Read())
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[k].Cells[0].Value = reader[0].ToString();
+                dataGridView1.Rows[k].Cells[1].Value = reader[1].ToString();
+                dataGridView1.Rows[k].Cells[2].Value = reader[2].ToString();
+                if (reader[2].ToString().Equals("0"))
+                {
+                    comboBox1.Items.Add(reader[0].ToString());
+                }
+                k++;
+            }
+            reader.Close();
+            Database.conn.Close();
         }
     }
 }
