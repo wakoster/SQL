@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.akeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.byAnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +40,11 @@
             this.administratorData = new SQLForm.AdministratorData();
             this.administratorTableAdapter = new SQLForm.AdministratorDataTableAdapters.AdministratorTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Akey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ByAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.administratorBindingSource)).BeginInit();
@@ -55,7 +55,6 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -67,13 +66,12 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.anoDataGridViewTextBoxColumn,
-            this.akeyDataGridViewTextBoxColumn,
-            this.jnoDataGridViewTextBoxColumn,
-            this.anameDataGridViewTextBoxColumn,
-            this.byAnoDataGridViewTextBoxColumn});
+            this.Ano,
+            this.Akey,
+            this.Jno,
+            this.Aname,
+            this.ByAno});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.DataSource = this.administratorBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -84,41 +82,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(698, 336);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // anoDataGridViewTextBoxColumn
-            // 
-            this.anoDataGridViewTextBoxColumn.DataPropertyName = "Ano";
-            this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
-            this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
-            this.anoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // akeyDataGridViewTextBoxColumn
-            // 
-            this.akeyDataGridViewTextBoxColumn.DataPropertyName = "Akey";
-            this.akeyDataGridViewTextBoxColumn.HeaderText = "Akey";
-            this.akeyDataGridViewTextBoxColumn.Name = "akeyDataGridViewTextBoxColumn";
-            this.akeyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // jnoDataGridViewTextBoxColumn
-            // 
-            this.jnoDataGridViewTextBoxColumn.DataPropertyName = "Jno";
-            this.jnoDataGridViewTextBoxColumn.HeaderText = "Jno";
-            this.jnoDataGridViewTextBoxColumn.Name = "jnoDataGridViewTextBoxColumn";
-            this.jnoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // anameDataGridViewTextBoxColumn
-            // 
-            this.anameDataGridViewTextBoxColumn.DataPropertyName = "Aname";
-            this.anameDataGridViewTextBoxColumn.HeaderText = "Aname";
-            this.anameDataGridViewTextBoxColumn.Name = "anameDataGridViewTextBoxColumn";
-            this.anameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // byAnoDataGridViewTextBoxColumn
-            // 
-            this.byAnoDataGridViewTextBoxColumn.DataPropertyName = "ByAno";
-            this.byAnoDataGridViewTextBoxColumn.HeaderText = "ByAno";
-            this.byAnoDataGridViewTextBoxColumn.Name = "byAnoDataGridViewTextBoxColumn";
-            this.byAnoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -151,7 +114,6 @@
             // administratorBindingSource
             // 
             this.administratorBindingSource.DataMember = "Administrator";
-            this.administratorBindingSource.DataSource = this.administratorData;
             // 
             // administratorData
             // 
@@ -173,6 +135,36 @@
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Ano
+            // 
+            this.Ano.HeaderText = "Ano";
+            this.Ano.Name = "Ano";
+            this.Ano.ReadOnly = true;
+            // 
+            // Akey
+            // 
+            this.Akey.HeaderText = "Akey";
+            this.Akey.Name = "Akey";
+            this.Akey.ReadOnly = true;
+            // 
+            // Jno
+            // 
+            this.Jno.HeaderText = "Jno";
+            this.Jno.Name = "Jno";
+            this.Jno.ReadOnly = true;
+            // 
+            // Aname
+            // 
+            this.Aname.HeaderText = "Aname";
+            this.Aname.Name = "Aname";
+            this.Aname.ReadOnly = true;
+            // 
+            // ByAno
+            // 
+            this.ByAno.HeaderText = "ByAno";
+            this.ByAno.Name = "ByAno";
+            this.ByAno.ReadOnly = true;
             // 
             // Administrator
             // 
@@ -200,15 +192,15 @@
         private AdministratorData administratorData;
         private System.Windows.Forms.BindingSource administratorBindingSource;
         private AdministratorDataTableAdapters.AdministratorTableAdapter administratorTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn akeyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn byAnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Akey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Aname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ByAno;
     }
 }

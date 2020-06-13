@@ -57,9 +57,9 @@
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
     <Compile Include="AdministratorData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AdministratorData.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="CoManager.cs">
       <SubType>Form</SubType>
@@ -132,6 +132,7 @@
     <Compile Include="SelProInformation.designer.cs">
       <DependentUpon>SelProInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQL.cs" />
     <Compile Include="TopAdministrator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,9 +238,9 @@
       <DependentUpon>AdministratorData.xsd</DependentUpon>
     </None>
     <None Include="AdministratorData.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AdministratorData.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="AdministratorData.xss">
       <DependentUpon>AdministratorData.xsd</DependentUpon>
