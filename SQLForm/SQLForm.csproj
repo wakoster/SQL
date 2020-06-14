@@ -56,11 +56,6 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministratorData.Designer.cs">
-      <DependentUpon>AdministratorData.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="CoManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,17 +225,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="AdministratorData.xsc">
-      <DependentUpon>AdministratorData.xsd</DependentUpon>
-    </None>
-    <None Include="AdministratorData.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AdministratorData.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="AdministratorData.xss">
-      <DependentUpon>AdministratorData.xsd</DependentUpon>
-    </None>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

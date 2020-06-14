@@ -32,23 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.administratorData = new SQLForm.AdministratorData();
-            this.administratorTableAdapter = new SQLForm.AdministratorDataTableAdapters.AdministratorTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Akey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Jno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ByAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.administratorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administratorData)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -82,6 +79,37 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(698, 336);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            // 
+            // Ano
+            // 
+            this.Ano.HeaderText = "Ano";
+            this.Ano.Name = "Ano";
+            this.Ano.ReadOnly = true;
+            // 
+            // Akey
+            // 
+            this.Akey.HeaderText = "Akey";
+            this.Akey.Name = "Akey";
+            this.Akey.ReadOnly = true;
+            // 
+            // Jno
+            // 
+            this.Jno.HeaderText = "Jno";
+            this.Jno.Name = "Jno";
+            this.Jno.ReadOnly = true;
+            // 
+            // Aname
+            // 
+            this.Aname.HeaderText = "Aname";
+            this.Aname.Name = "Aname";
+            this.Aname.ReadOnly = true;
+            // 
+            // ByAno
+            // 
+            this.ByAno.HeaderText = "ByAno";
+            this.ByAno.Name = "ByAno";
+            this.ByAno.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -115,15 +143,6 @@
             // 
             this.administratorBindingSource.DataMember = "Administrator";
             // 
-            // administratorData
-            // 
-            this.administratorData.DataSetName = "AdministratorData";
-            this.administratorData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // administratorTableAdapter
-            // 
-            this.administratorTableAdapter.ClearBeforeFill = true;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -135,36 +154,6 @@
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Ano
-            // 
-            this.Ano.HeaderText = "Ano";
-            this.Ano.Name = "Ano";
-            this.Ano.ReadOnly = true;
-            // 
-            // Akey
-            // 
-            this.Akey.HeaderText = "Akey";
-            this.Akey.Name = "Akey";
-            this.Akey.ReadOnly = true;
-            // 
-            // Jno
-            // 
-            this.Jno.HeaderText = "Jno";
-            this.Jno.Name = "Jno";
-            this.Jno.ReadOnly = true;
-            // 
-            // Aname
-            // 
-            this.Aname.HeaderText = "Aname";
-            this.Aname.Name = "Aname";
-            this.Aname.ReadOnly = true;
-            // 
-            // ByAno
-            // 
-            this.ByAno.HeaderText = "ByAno";
-            this.ByAno.Name = "ByAno";
-            this.ByAno.ReadOnly = true;
             // 
             // Administrator
             // 
@@ -181,7 +170,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.administratorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administratorData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,9 +177,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private AdministratorData administratorData;
+        //private AdministratorData administratorData;
         private System.Windows.Forms.BindingSource administratorBindingSource;
-        private AdministratorDataTableAdapters.AdministratorTableAdapter administratorTableAdapter;
+        //private AdministratorDataTableAdapters.AdministratorTableAdapter administratorTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
