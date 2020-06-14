@@ -14,6 +14,7 @@ namespace SQLForm
     public partial class AdministratorUpdate : Form
     {
         AdministratorDemo administratorDemo;
+
         string _Ano;
         string _Aname;
         string _Akey;
