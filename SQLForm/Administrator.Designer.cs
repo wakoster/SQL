@@ -41,8 +41,8 @@
             this.修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.administratorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.administratorBindingSource)).BeginInit();
@@ -126,22 +126,21 @@
             this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
             this.修改ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.修改ToolStripMenuItem.Text = "修改";
+            this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
             this.删除ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // 添加ToolStripMenuItem
             // 
             this.添加ToolStripMenuItem.Name = "添加ToolStripMenuItem";
             this.添加ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.添加ToolStripMenuItem.Text = "添加";
-            // 
-            // administratorBindingSource
-            // 
-            this.administratorBindingSource.DataMember = "Administrator";
+            this.添加ToolStripMenuItem.Click += new System.EventHandler(this.添加ToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -154,6 +153,10 @@
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // administratorBindingSource
+            // 
+            this.administratorBindingSource.DataMember = "Administrator";
             // 
             // Administrator
             // 

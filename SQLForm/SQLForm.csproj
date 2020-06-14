@@ -56,6 +56,18 @@
     <Compile Include="Administrator.Designer.cs">
       <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdministratorInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministratorInsert.designer.cs">
+      <DependentUpon>AdministratorInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministratorUpdate.designer.cs">
+      <DependentUpon>AdministratorUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministratorInsert.resx">
+      <DependentUpon>AdministratorInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministratorUpdate.resx">
+      <DependentUpon>AdministratorUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoManager.resx">
       <DependentUpon>CoManager.cs</DependentUpon>
