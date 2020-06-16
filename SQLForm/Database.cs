@@ -18,8 +18,6 @@ namespace SQLForm
         /// (测试用数据，记得删除)数据库连接对象
         /// </summary>
         public static SqlConnection conn  = new SqlConnection(connString);
-
-
-
+        
     }
 }
