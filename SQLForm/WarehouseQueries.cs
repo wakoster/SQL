@@ -58,7 +58,7 @@ namespace SQLForm
 
             if(textBox1.Text == string.Empty)
             {
-                textBox1.Text = "请输入仓库号后进行查询";
+                textBox1.Text = "请您输入仓库号后进行查询";
             }
             else
             {
@@ -80,7 +80,7 @@ namespace SQLForm
 
             if (textBox1.Text == string.Empty)
             {
-                textBox1.Text = "请输入仓库号后进行查询";
+                textBox1.Text = "请您输入仓库号后进行查询";
             }
             else
             {
