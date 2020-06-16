@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SQLForm
 {
@@ -42,6 +43,54 @@ namespace SQLForm
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if(ConnectionState.Open == Database.conn.State)//判断数据库是否开启
+                Database.conn.Close();
+            Database.conn.Open();
+
+            if(textBox1.Text == string.Empty)
+            {
+                textBox1.Text = "请输入仓库号后进行查询";
+            }
+            else
+            {
+                String userstring = "Select * from WAREH where Wno ='" + textBox1.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(userstring, Database.conn);//数据适配器对象，可把数据源的数据读到内存表里，或把内存的数据写回去。
+                DataTable dt = new DataTable();  //datatable对象，用来填充查询到的数据
+                da.Fill(dt);  //把查询到的数据da填充给dt
+                dataGridView1.DataSource = dt; //将dt对象作为dataview1的数据源
+            }
+            Database.conn.Close();
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (ConnectionState.Open == Database.conn.State)//判断数据库是否开启
+                Database.conn.Close();
+            Database.conn.Open();
+
+            if (textBox1.Text == string.Empty)
+            {
+                textBox1.Text = "请输入仓库号后进行查询";
+            }
+            else
+            {
+                String userstring = "Select * from REPERTORY where Wno ='" + textBox1.Text + "'";
+                SqlDataAdapter da = new SqlDataAdapter(userstring, Database.conn);//数据适配器对象，可把数据源的数据读到内存表里，或把内存的数据写回去。
+                DataTable dt = new DataTable();  //datatable对象，用来填充查询到的数据
+                da.Fill(dt);  //把查询到的数据da填充给dt
+                dataGridView1.DataSource = dt; //将dt对象作为dataview1的数据源
+            }
+            Database.conn.Close();
         }
     }
 }
