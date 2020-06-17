@@ -74,18 +74,18 @@
     <Compile Include="CoManager.designer.cs">
       <DependentUpon>CoManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="DamagedProductInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DamagedProductInformation.Designer.cs">
+      <DependentUpon>DamagedProductInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="DeleteWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteWarehouse.Designer.cs">
       <DependentUpon>DeleteWarehouse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formbaosunbiaochaxun.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formbaosunbiaochaxun.designer.cs">
-      <DependentUpon>Formbaosunbiaochaxun.cs</DependentUpon>
     </Compile>
     <Compile Include="Formcangkutianjia.cs">
       <SubType>Form</SubType>
@@ -122,6 +122,12 @@
     </Compile>
     <Compile Include="HManager.designer.cs">
       <DependentUpon>HManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInventoryInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductInventoryInformation.designer.cs">
+      <DependentUpon>ProductInventoryInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="ProInformation.cs">
       <SubType>Form</SubType>
@@ -186,11 +192,11 @@
     <EmbeddedResource Include="CoManager.resx">
       <DependentUpon>CoManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DamagedProductInformation.resx">
+      <DependentUpon>DamagedProductInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteWarehouse.resx">
       <DependentUpon>DeleteWarehouse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formbaosunbiaochaxun.resx">
-      <DependentUpon>Formbaosunbiaochaxun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formcangkutianjia.resx">
       <DependentUpon>Formcangkutianjia.cs</DependentUpon>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HManager.resx">
       <DependentUpon>HManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductInventoryInformation.resx">
+      <DependentUpon>ProductInventoryInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProInformation.resx">
       <DependentUpon>ProInformation.cs</DependentUpon>

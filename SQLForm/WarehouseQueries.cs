@@ -18,6 +18,17 @@ namespace SQLForm
         {
             this.administratorDemo = administratorDemo;
             InitializeComponent();
+
+
+            if (ConnectionState.Open == Database.conn.State)//判断数据库是否开启
+                Database.conn.Close();
+            Database.conn.Open();
+            String userstring = "Select Wno from WAREH  " ;
+            SqlDataAdapter da = new SqlDataAdapter(userstring, Database.conn);//数据适配器对象，可把数据源的数据读到内存表里，或把内存的数据写回去。
+            DataTable dt = new DataTable();  //datatable对象，用来填充查询到的数据
+            da.Fill(dt);  //把查询到的数据da填充给dt
+            dataGridView1.DataSource = dt; //将dt对象作为dataview1的数据源
+            Database.conn.Close();
         }
 
         private void Button3_Click(object sender, EventArgs e)

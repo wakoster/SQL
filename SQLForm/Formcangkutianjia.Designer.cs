@@ -33,9 +33,9 @@
             this.labelopestyle = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxcangkutianjiaWNO = new System.Windows.Forms.ComboBox();
             this.textBoxcangkutianjiaWSIZE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttoncangkutianjiafanhui
@@ -56,6 +56,7 @@
             this.buttoncangkutianjia.TabIndex = 1;
             this.buttoncangkutianjia.Text = "添加";
             this.buttoncangkutianjia.UseVisualStyleBackColor = true;
+            this.buttoncangkutianjia.Click += new System.EventHandler(this.buttoncangkutianjia_Click);
             // 
             // labelopestyle
             // 
@@ -93,19 +94,6 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "仓库规格";
             // 
-            // comboBoxcangkutianjiaWNO
-            // 
-            this.comboBoxcangkutianjiaWNO.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxcangkutianjiaWNO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.comboBoxcangkutianjiaWNO.FormattingEnabled = true;
-            this.comboBoxcangkutianjiaWNO.Location = new System.Drawing.Point(206, 143);
-            this.comboBoxcangkutianjiaWNO.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxcangkutianjiaWNO.Name = "comboBoxcangkutianjiaWNO";
-            this.comboBoxcangkutianjiaWNO.Size = new System.Drawing.Size(224, 32);
-            this.comboBoxcangkutianjiaWNO.TabIndex = 26;
-            this.comboBoxcangkutianjiaWNO.Text = "WH00000001";
-            this.comboBoxcangkutianjiaWNO.SelectedIndexChanged += new System.EventHandler(this.comboBoxspbh_SelectedIndexChanged);
-            // 
             // textBoxcangkutianjiaWSIZE
             // 
             this.textBoxcangkutianjiaWSIZE.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -127,12 +115,20 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "仓库添加";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(206, 144);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 34);
+            this.textBox1.TabIndex = 30;
+            // 
             // Formcangkutianjia
             // 
             this.ClientSize = new System.Drawing.Size(567, 395);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxcangkutianjiaWSIZE);
-            this.Controls.Add(this.comboBoxcangkutianjiaWNO);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labelopestyle);
@@ -152,8 +148,8 @@
         private System.Windows.Forms.Label labelopestyle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBoxcangkutianjiaWNO;
         private System.Windows.Forms.TextBox textBoxcangkutianjiaWSIZE;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

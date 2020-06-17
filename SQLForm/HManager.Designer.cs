@@ -43,7 +43,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(41, 192);
+            this.button1.Location = new System.Drawing.Point(41, 207);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(295, 52);
             this.button1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(41, 250);
+            this.button2.Location = new System.Drawing.Point(41, 274);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(295, 52);
             this.button2.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(439, 192);
+            this.button4.Location = new System.Drawing.Point(439, 207);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(295, 52);
             this.button4.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(439, 250);
+            this.button5.Location = new System.Drawing.Point(439, 274);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(295, 52);
             this.button5.TabIndex = 4;
@@ -115,22 +115,24 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 81);
+            this.label2.Font = new System.Drawing.Font("宋体", 11F);
+            this.label2.Location = new System.Drawing.Point(234, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 15);
+            this.label2.Size = new System.Drawing.Size(199, 19);
             this.label2.TabIndex = 8;
-            this.label2.Text = "高级管理员：";
+            this.label2.Text = "欢迎您！高级管理员：";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 78);
+            this.textBox1.Location = new System.Drawing.Point(423, 81);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 25);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(319, 136);
+            this.button3.Location = new System.Drawing.Point(439, 134);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(295, 52);
             this.button3.TabIndex = 10;
@@ -140,7 +142,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(319, 78);
+            this.button7.Location = new System.Drawing.Point(41, 134);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(295, 52);
             this.button7.TabIndex = 11;

@@ -142,6 +142,8 @@
             this.listView1.Size = new System.Drawing.Size(1238, 273);
             this.listView1.TabIndex = 17;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // buttonSearch
             // 
@@ -154,6 +156,7 @@
             this.buttonSearch.TabIndex = 16;
             this.buttonSearch.Text = "查询执行";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxchurukuWNO
             // 

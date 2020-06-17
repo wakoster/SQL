@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using Microsoft.Office.Interop.Excel;
 
-
 namespace SQLForm
 {
-    public partial class Form3 : Form
+    public partial class DamagedProductInformation : Form
     {
-        List<string> mylist = new List<string>();
-        public Form3(List<string> mylist)
+        List<REPERTORYInformation> newList = new List<REPERTORYInformation>();
+        public DamagedProductInformation(REPERTORYInformation A)
         {
             InitializeComponent();
             dataGridView1.Rows.Add();
-            dataGridView1.Rows[0].Cells[0].Value = mylist[0];
-            dataGridView1.Rows[0].Cells[1].Value = mylist[1];
+            dataGridView1.Rows[0].Cells[0].Value = A.Pno;
+            dataGridView1.Rows[0].Cells[1].Value = A.Wno;
+            dataGridView1.Rows[0].Cells[2].Value = A.number;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string a = "D:" + "\\KKHMD.xls";
-            ExportExcels(a, dataGridView1);
+            //string a = "D:" + "\\KKHMD.xls";
+            //ExportExcels(a, dataGridView1);
         }
         /// <summary>
         /// 
@@ -84,9 +84,5 @@ namespace SQLForm
             //MessageBox.Show("文件： " + fileName + ".xls 保存成功", "信息提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

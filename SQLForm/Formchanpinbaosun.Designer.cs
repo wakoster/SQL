@@ -33,9 +33,7 @@
             this.buttonbaosunfanhui = new System.Windows.Forms.Button();
             this.buttonbaosunzhixing = new System.Windows.Forms.Button();
             this.textBoxBSPNO = new System.Windows.Forms.TextBox();
-            this.textBoxdBSPNAME = new System.Windows.Forms.TextBox();
             this.textBoxBSNUMBER = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.labelopestyle = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -54,7 +52,7 @@
             this.comboBoxBSWNO.Name = "comboBoxBSWNO";
             this.comboBoxBSWNO.Size = new System.Drawing.Size(257, 32);
             this.comboBoxBSWNO.TabIndex = 56;
-            this.comboBoxBSWNO.Text = "0001";
+            this.comboBoxBSWNO.Text = "P001";
             this.comboBoxBSWNO.SelectedIndexChanged += new System.EventHandler(this.comboBoxdwbh_SelectedIndexChanged);
             // 
             // label6
@@ -62,7 +60,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(13, 481);
+            this.label6.Location = new System.Drawing.Point(13, 423);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 24);
@@ -74,7 +72,7 @@
             // 
             this.buttonbaosunfanhui.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonbaosunfanhui.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonbaosunfanhui.Location = new System.Drawing.Point(408, 394);
+            this.buttonbaosunfanhui.Location = new System.Drawing.Point(371, 326);
             this.buttonbaosunfanhui.Margin = new System.Windows.Forms.Padding(4);
             this.buttonbaosunfanhui.Name = "buttonbaosunfanhui";
             this.buttonbaosunfanhui.Size = new System.Drawing.Size(132, 36);
@@ -87,7 +85,7 @@
             // 
             this.buttonbaosunzhixing.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonbaosunzhixing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonbaosunzhixing.Location = new System.Drawing.Point(140, 394);
+            this.buttonbaosunzhixing.Location = new System.Drawing.Point(121, 326);
             this.buttonbaosunzhixing.Margin = new System.Windows.Forms.Padding(4);
             this.buttonbaosunzhixing.Name = "buttonbaosunzhixing";
             this.buttonbaosunzhixing.Size = new System.Drawing.Size(132, 36);
@@ -107,40 +105,16 @@
             this.textBoxBSPNO.TabIndex = 54;
             this.textBoxBSPNO.TextChanged += new System.EventHandler(this.textBoxdwmc_TextChanged);
             // 
-            // textBoxdBSPNAME
-            // 
-            this.textBoxdBSPNAME.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxdBSPNAME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBoxdBSPNAME.Location = new System.Drawing.Point(230, 265);
-            this.textBoxdBSPNAME.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxdBSPNAME.Name = "textBoxdBSPNAME";
-            this.textBoxdBSPNAME.Size = new System.Drawing.Size(257, 35);
-            this.textBoxdBSPNAME.TabIndex = 52;
-            this.textBoxdBSPNAME.TextChanged += new System.EventHandler(this.textBoxdwdz_TextChanged);
-            // 
             // textBoxBSNUMBER
             // 
             this.textBoxBSNUMBER.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxBSNUMBER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBoxBSNUMBER.Location = new System.Drawing.Point(230, 326);
+            this.textBoxBSNUMBER.Location = new System.Drawing.Point(230, 272);
             this.textBoxBSNUMBER.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxBSNUMBER.Name = "textBoxBSNUMBER";
             this.textBoxBSNUMBER.Size = new System.Drawing.Size(257, 35);
             this.textBoxBSNUMBER.TabIndex = 53;
             this.textBoxBSNUMBER.TextChanged += new System.EventHandler(this.textBoxfzrxm_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label12.Location = new System.Drawing.Point(89, 268);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 24);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "产品名称";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // labelopestyle
             // 
@@ -186,7 +160,7 @@
             this.labelres.AutoSize = true;
             this.labelres.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.labelres.Location = new System.Drawing.Point(269, 449);
+            this.labelres.Location = new System.Drawing.Point(226, 382);
             this.labelres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelres.Name = "labelres";
             this.labelres.Size = new System.Drawing.Size(106, 24);
@@ -199,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(89, 330);
+            this.label8.Location = new System.Drawing.Point(89, 275);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 24);
@@ -224,15 +198,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 565);
+            this.ClientSize = new System.Drawing.Size(629, 456);
             this.Controls.Add(this.comboBoxBSWNO);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonbaosunfanhui);
             this.Controls.Add(this.buttonbaosunzhixing);
             this.Controls.Add(this.textBoxBSPNO);
-            this.Controls.Add(this.textBoxdBSPNAME);
             this.Controls.Add(this.textBoxBSNUMBER);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.labelopestyle);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
@@ -252,9 +224,7 @@
         private System.Windows.Forms.ComboBox comboBoxBSWNO;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxBSPNO;
-        private System.Windows.Forms.TextBox textBoxdBSPNAME;
         private System.Windows.Forms.TextBox textBoxBSNUMBER;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelopestyle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;

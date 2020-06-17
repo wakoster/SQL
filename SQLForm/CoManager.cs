@@ -17,6 +17,7 @@ namespace SQLForm
         {
             this.administratorDemo = administratorDemo;
             InitializeComponent();
+            textBox1.Text = administratorDemo.Aname;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -65,5 +66,12 @@ namespace SQLForm
             Formchurukucaozuo form = new Formchurukucaozuo(this.administratorDemo);
             form.Show();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           textBox1.Text = administratorDemo.Aname;
+        }
+
+       
     }
 }

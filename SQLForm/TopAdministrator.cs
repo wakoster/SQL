@@ -17,6 +17,7 @@ namespace SQLForm
         {
             this.administratorDemo = administratorDemo;
             InitializeComponent();
+            label1.Text = "最高管理员：" + administratorDemo.Aname;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -66,6 +67,11 @@ namespace SQLForm
             this.Close();
             ModifyPersonalInformation form = new ModifyPersonalInformation(this.administratorDemo);
             form.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,6 +18,11 @@ namespace SQLForm
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             List<REPERTORYInformation> newList = new List<REPERTORYInformation>();
+            if (!reader.HasRows)
+            {
+                newList.Add(new REPERTORYInformation("false", "false", 0));
+                return newList;
+            }
             while (reader.Read())
             {
                 newList.Add(new REPERTORYInformation(reader[0].ToString(), reader[1].ToString(), Convert.ToInt32(reader[2])));
@@ -38,6 +43,11 @@ namespace SQLForm
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             List<REPERTORYInformation> newList = new List<REPERTORYInformation>();
+            if (!reader.HasRows)
+            {
+                newList.Add(new REPERTORYInformation("false", "false", 0));
+                return newList;
+            }
             while (reader.Read())
             {
                 newList.Add(new REPERTORYInformation(reader[0].ToString(), reader[1].ToString(), Convert.ToInt32(reader[2])));
@@ -45,7 +55,63 @@ namespace SQLForm
             reader.Close();
             return newList;
         }
-
+        static public bool ProductInbound(SqlConnection conn, string Pno, string Wno, int number, string Ano)
+        {
+            string sql = "SELECT * FROM WAREH WHERE Wno = '" + Wno + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            int size = 0;
+            int now = 0;
+            while (reader.Read())
+            {
+                size = Convert.ToInt32(reader[1]);
+                now = Convert.ToInt32(reader[2]);
+            }
+            reader.Close();
+            string sl = "SELECT Wno,SUM(Bnum) FROM DAMAGE WHERE Wno = '" + Wno + "'GROUP BY Wno";
+            SqlCommand cm = new SqlCommand(sl, conn);
+            SqlDataReader read = cm.ExecuteReader();
+            int bnum = 0;
+            while (read.Read())
+            {
+                bnum = Convert.ToInt32(read[1]);
+            }
+            read.Close();
+            string sq = "SELECT * FROM REPERTORY WHERE Pno = '" + Pno + "' and Wno = '" + Wno + "'";
+            SqlCommand cd = new SqlCommand(sq, conn);
+            SqlDataReader Read = cd.ExecuteReader();
+            int num = 0;
+            while (Read.Read())
+            {
+                num = Convert.ToInt32(Read[2]);
+            }
+            Read.Close();
+            if (number + now + bnum > size)
+            {
+                return false;
+            }
+            else
+            {
+                ModificationREPERTORY(conn, Pno, Wno, num + number);
+                ModificationWAREH(conn, Wno, now + number);
+                RecordedInformationIntoOpreation(conn, Pno, Wno, "入", number, Ano);
+                return true;
+            }
+        }
+        /// <summary>
+        /// 修改仓库表信息
+        /// </summary>
+        /// <param name="conn">数据库连接对象</param>
+        /// <param name="Pno">产品号</param>
+        /// <param name="Wno">仓库号</param>
+        /// <param name="number">数量</param>
+        static public void ModificationWAREH(SqlConnection conn, string Wno, int number)
+        {
+            string sql = "UPDATE WAREH set Wnow = " + number + "WHERE  Wno = '" + Wno + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Close();
+        }
         /// <summary>
         /// 按产品号搜索损坏表
         /// </summary>
@@ -54,10 +120,15 @@ namespace SQLForm
         /// <returns>返回信息</returns>
         static public List<REPERTORYInformation> SelsctDAMAGEByPno(SqlConnection conn, string Pno)
         {
-            string sql = "SELECT * FROM DAMAGE WHERE Pno = '" + Pno + "' ORDER BY Pnum ASC";
+            string sql = "SELECT * FROM DAMAGE WHERE Pno = '" + Pno + "' ORDER BY Bnum ASC";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             List<REPERTORYInformation> newList = new List<REPERTORYInformation>();
+            if (!reader.HasRows)
+            {
+                newList.Add(new REPERTORYInformation("false","false",0));
+                return newList;
+            }
             while (reader.Read())
             {
                 newList.Add(new REPERTORYInformation(reader[0].ToString(), reader[1].ToString(), Convert.ToInt32(reader[2])));
@@ -207,15 +278,16 @@ namespace SQLForm
         /// </summary>
         static public List<string> SelectFromWarhouse(SqlConnection conn, string Wno)
         {
-            conn.Open();
-            string sqlsentence = "SELECT * FROM Wno WHERE Wno = '" + Wno + "' ";
+            string sqlsentence = "SELECT * FROM WAREH WHERE Wno = '" + Wno + "' ";
             SqlCommand cmd = new SqlCommand(sqlsentence, conn);
             SqlDataReader reader = cmd.ExecuteReader();
+            List<string> Wlist = new List<string>();
             if (!reader.HasRows)
             {
-                Console.WriteLine("仓库号为空");
+                Wlist.Add("false");
+                return Wlist;
             }
-            List<string> Wlist = new List<string>();
+
             while (reader.Read())
             {
                 for (int i = 0; i < reader.FieldCount; i++)
@@ -224,7 +296,6 @@ namespace SQLForm
                 }
             }
             reader.Close();
-            conn.Close();
             return Wlist;
         }
 
@@ -352,16 +423,16 @@ namespace SQLForm
         /// <returns>包含查询结果的list</returns>
         static public List<string> SelectFromProductWherePno(SqlConnection conn, string Pno)  //根据产品号查询产品信息
         {
-            conn.Open();
             string sqlsentence = "SELECT * FROM Product WHERE Pno = '" + Pno + "' ";
             SqlCommand cmd = new SqlCommand(sqlsentence, conn);
             SqlDataReader reader = cmd.ExecuteReader();
+            List<string> mylist = new List<string>();
             if (!reader.HasRows)
             {
-                Console.WriteLine("无此条记录");
+                mylist.Add("false");
+                return mylist;
             }
-            List<string> mylist = new List<string>();
-
+            mylist.Clear();
             while (reader.Read())//判断数据表中是否含有数据  
             {
                 for (int i = 0; i < reader.FieldCount; i++)//将查询结果传给list
@@ -371,7 +442,6 @@ namespace SQLForm
 
             }
             reader.Close();
-            conn.Close();
 
             return mylist;
         }
@@ -384,15 +454,16 @@ namespace SQLForm
         /// <returns>包含查询结果的list</returns>
         static public List<string> SelectFromProductWherePname(SqlConnection conn, string Pname)  //根据产品名查询产品信息
         {
-            conn.Open();
+
             string sqlsentence = "SELECT * FROM Product WHERE Pname = '" + Pname + "'";
             SqlCommand cmd = new SqlCommand(sqlsentence, conn);
             SqlDataReader reader = cmd.ExecuteReader();
+            List<string> mylist = new List<string>();
             if (!reader.HasRows)
             {
-                Console.WriteLine("无此条记录");
+                mylist.Add("false");
+                return mylist;
             }
-            List<string> mylist = new List<string>();
             while (reader.Read())//判断数据表中是否含有数据  
             {
                 for (int i = 0; i < reader.FieldCount; i++)//将查询结果传给list
@@ -402,7 +473,6 @@ namespace SQLForm
 
             }
             reader.Close();
-            conn.Close();
 
             return mylist;
         }
@@ -416,6 +486,7 @@ namespace SQLForm
         /// <param name="Bnum">损坏数量</param>
         static public void AddDAMAGE(SqlConnection conn, string Pno, string Wno, string Bnum)  //增加损坏记录
         {
+            Database.conn.Close();
             conn.Open();
             string sqlsentence = "SELECT * FROM DAMAGE WHERE Pno = '" + Pno + "' and Wno = '" + Wno + "'";
             SqlCommand cmd = new SqlCommand(sqlsentence, conn);

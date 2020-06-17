@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace SQLForm
 {
@@ -46,6 +48,42 @@ namespace SQLForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBoxBSWNO.Text.Equals(""))
+            {
+                MessageBox.Show("请输入要报损的仓库号", "添加提示");
+                return;
+            }
+            if (textBoxBSPNO.Text.Equals(""))
+            {
+                MessageBox.Show("请输入要报损的产品号", "添加提示");
+                return;
+            }
+            if (textBoxBSNUMBER.Text.Equals(""))
+            {
+                MessageBox.Show("请输入要报损的产品数量", "添加提示");
+                return;
+            }
+            Database.conn.Open();
+            String wno = this.comboBoxBSWNO.Text;
+            String pno = this.textBoxBSPNO.Text;
+            String num = this.textBoxBSNUMBER.Text;
+           
+            string a = "SELECT * FROM REPERTORY WHERE Wno = '" + wno + "' AND Pno='" + pno + "' AND Pnum>'"+num+"'";
+            SqlCommand cmd = new SqlCommand(a, Database.conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (!reader.HasRows)
+            {
+               MessageBox.Show("库存信息有误请重新输入", "报损");
+                Database.conn.Close();
+            }
+            else
+            {
+                reader.Close();
+                SQL.AddDAMAGE(Database.conn, pno, wno, num);
+                Database.conn.Close();
+            }
+            textBoxBSPNO.Clear();
+            textBoxBSNUMBER.Clear();
 
         }
 

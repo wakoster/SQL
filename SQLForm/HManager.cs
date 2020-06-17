@@ -18,6 +18,7 @@ namespace SQLForm
         {
             this.administratorDemo = administratorDemo;
             InitializeComponent();
+            textBox1.Text = administratorDemo.Aname;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,6 +93,11 @@ namespace SQLForm
             this.Close();
             Formchanpinbaosun form2 = new Formchanpinbaosun(this.administratorDemo);
             form2.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = administratorDemo.Ano;
         }
     }
 }

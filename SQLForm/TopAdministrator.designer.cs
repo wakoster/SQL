@@ -101,6 +101,7 @@
             this.label1.Size = new System.Drawing.Size(129, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "最高管理员：0001";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button6
             // 
